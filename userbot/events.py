@@ -143,6 +143,7 @@ def register(**args):
                                                         "error.log",
                                                         caption=text)
                            remove("error.log")
+                           =======
                         await check.client.respond(
                             "`Sorry, my userbot has crashed."
                             "\nThe error logs are stored in the userbot's log chat.`"
