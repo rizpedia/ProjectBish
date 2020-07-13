@@ -16,7 +16,7 @@ from userbot.events import register
 
 # ========================= CONSTANTS ============================
 AFKSTR = [
-    "Saya sedang sibuk sekarang. Mungkin jika sangat penting anda bisa kirim nomor whatsapp pacarmu!\n#Bot",
+    "Saya sedang sibuk sekarang. jika sangat penting anda bisa kirim nomor whatsapp pacarmu!\n#Bot",
     "Saya sedang tidak online sekarang. Jika memang penting, Tinggalkan pesan setelah bunyi beep:\n`beeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeep`!\n#Bot",
     "Mungkin belum saatnya kita bertemu.\n#Bot",
     "Aku Akan Balik Sebentar Lagi dan Jika tidak...,\ntunggulah lebih lama :v.\n#Bot",
@@ -73,16 +73,16 @@ async def mention_afk(mention):
                     wday = now + datetime.timedelta(days=-day)
                     afk_str = wday.strftime('%A')
             elif hours > 1:
-                afk_str = f"`{int(hours)}h{int(minutes)}m` ago"
+                afk_str = f"`{int(hours)}Jam{int(minutes)}Menit` Lalu"
             elif minutes > 0:
-                afk_str = f"`{int(minutes)}m{int(seconds)}s` ago"
+                afk_str = f"`{int(minutes)}Menit{int(seconds)}Detik` Lalu"
             else:
-                afk_str = f"`{int(seconds)}s` ago"
+                afk_str = f"`{int(seconds)}Detik` Lalu"
             if mention.sender_id not in USERS:
                 if AFKREASON:
-                    await mention.reply("I'm AFK right now."
-                                        f"\nBecause I'm `{AFKREASON}`."
-                                        f"\nAFK since: {afk_str}")
+                    await mention.reply("[Offline]"
+                                        f"\nKarena : `{AFKREASON}`."
+                                        f"\nOffline Sejak: {afk_str}")
                 else:
                     await mention.reply(str(choice(AFKSTR)))
                 USERS.update({mention.sender_id: 1})
@@ -90,9 +90,9 @@ async def mention_afk(mention):
             elif mention.sender_id in USERS:
                 if USERS[mention.sender_id] % randint(2, 4) == 0:
                     if AFKREASON:
-                        await mention.reply("I'm still AFK."
-                                            f"\nReason: `{AFKREASON}`."
-                                            f"\nAFK from: {afk_str}")
+                        await mention.reply("[Offline]"
+                                            f"\nKarena: `{AFKREASON}`."
+                                            f"\nOffline Sejak: {afk_str}")
                     else:
                         await mention.reply(str(choice(AFKSTR)))
                     USERS[mention.sender_id] = USERS[mention.sender_id] + 1
@@ -146,16 +146,16 @@ async def afk_on_pm(sender):
                     wday = now + datetime.timedelta(days=-day)
                     afk_str = wday.strftime('%A')
             elif hours > 1:
-                afk_str = f"`{int(hours)}h{int(minutes)}m` ago"
+                afk_str = f"`{int(hours)}Jam{int(minutes)} Menit` Lalu"
             elif minutes > 0:
-                afk_str = f"`{int(minutes)}m{int(seconds)}s` ago"
+                afk_str = f"`{int(minutes)}Menit{int(seconds)}Detik` Lalu"
             else:
-                afk_str = f"`{int(seconds)}s` ago"
+                afk_str = f"`{int(seconds)}Detik` Lalu"
             if sender.sender_id not in USERS:
                 if AFKREASON:
-                    await sender.reply("I'm AFK right now."
-                                       f"\nReason: `{AFKREASON}`."
-                                       f"\nAFK since: {afk_str}")
+                    await sender.reply("[Offline]"
+                                       f"\nKarena: `{AFKREASON}`."
+                                       f"\nOffline Sejak: {afk_str}")
                 else:
                     await sender.reply(str(choice(AFKSTR)))
                 USERS.update({sender.sender_id: 1})
@@ -163,9 +163,9 @@ async def afk_on_pm(sender):
             elif apprv and sender.sender_id in USERS:
                 if USERS[sender.sender_id] % randint(2, 4) == 0:
                     if AFKREASON:
-                        await sender.reply("I'm still AFK."
-                                           f"\nReason: `{AFKREASON}`."
-                                           f"\nAFK from: {afk_str}")
+                        await sender.reply("[Offline]"
+                                           f"\nKarena: `{AFKREASON}`."
+                                           f"\nOffline Sejak: {afk_str}")
                     else:
                         await sender.reply(str(choice(AFKSTR)))
                     USERS[sender.sender_id] = USERS[sender.sender_id] + 1
@@ -191,12 +191,12 @@ async def set_afk(afk_e):
     afk_start = start1.replace(microsecond=0)
     if string:
         AFKREASON = string
-        await afk_e.edit(f"Aku Pergi AFK!\
+        await afk_e.edit(f"[Offline]\
         \nKarena: `{string}`")
     else:
-        await afk_e.edit("Pergi AFK!")
+        await afk_e.edit("[Offline]")
     if BOTLOG:
-        await afk_e.client.send_message(BOTLOG_CHATID, "#AFK\nYou went AFK!")
+        await afk_e.client.send_message(BOTLOG_CHATID, "#AFK\nAnda Offline")
     ISAFK = True
     afk_time = datetime.now()
     raise StopPropagation
@@ -216,14 +216,14 @@ async def type_afk_is_not_true(notafk):
     afk_end = not_afk.replace(microsecond=0)
     if ISAFK:
         ISAFK = False
-        msg = await notafk.respond("Aku sudah tidak AFK.")
+        msg = await notafk.respond("[Online]")
         await sleep(1)
         await msg.delete()
         if BOTLOG:
             await notafk.client.send_message(
                 BOTLOG_CHATID,
-                "You've recieved " + str(COUNT_MSG) + " messages from " +
-                str(len(USERS)) + " chats while you were away",
+                "Anda menerima " + str(COUNT_MSG) + " Pesan Dari " +
+                str(len(USERS))  "
             )
             for i in USERS:
                 name = await notafk.client.get_entity(i)
@@ -231,7 +231,7 @@ async def type_afk_is_not_true(notafk):
                 await notafk.client.send_message(
                     BOTLOG_CHATID,
                     "[" + name0 + "](tg://user?id=" + str(i) + ")" +
-                    " sent you " + "`" + str(USERS[i]) + " messages`",
+                    " Mengirimkan" + "`" + str(USERS[i]) + " Pesan`",
                 )
         COUNT_MSG = 0
         USERS = {}
