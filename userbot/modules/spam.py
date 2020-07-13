@@ -36,7 +36,7 @@ async def t_meme(e):
             "WSpam was executed successfully")
 
 
-@register(outgoing=True, pattern="^.spam (.*)")
+@register(outgoing=True, pattern="^.rusuh (.*)")
 async def spammers(e):
     counter = int(e.pattern_match.group(1).split(' ', 1)[0])
     spam_message = str(e.pattern_match.group(1).split(' ', 1)[1])
