@@ -52,6 +52,7 @@ RUN apk add --no-cache=true --update \
     zlib-dev \
     jpeg \
     zip \
+    php \
     freetype-dev
 
 RUN python3 -m ensurepip \
