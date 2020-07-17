@@ -1,5 +1,5 @@
 # We're using Alpine Edge
-FROM ubuntu:edge
+FROM ubuntu
 
 #
 # We have to uncomment Community repo for some packages
