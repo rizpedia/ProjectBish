@@ -1,5 +1,5 @@
 # We're using Alpine Edge
-FROM alpine:edge
+FROM ubuntu:edge
 
 #
 # We have to uncomment Community repo for some packages
@@ -9,7 +9,7 @@ RUN sed -e 's;^#http\(.*\)/edge/community;http\1/edge/community;g' -i /etc/apk/r
 #
 # Installing Packages
 #
-RUN apk add --no-cache=true --update \
+RUN apt install --no-cache=true --update \
     coreutils \
     bash \
     build-base \
