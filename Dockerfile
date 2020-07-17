@@ -9,7 +9,7 @@ FROM ubuntu
 #
 # Installing Packages
 #
-RUN apt install --no-cache=true --update \
+RUN apt install \
     coreutils \
     bash \
     build-base \
