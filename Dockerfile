@@ -1,15 +1,17 @@
+
+
 # We're using Alpine Edge
-FROM ubuntu
+FROM alpine:edge
 
 #
 # We have to uncomment Community repo for some packages
 #
-
+RUN sed -e 's;^#http\(.*\)/edge/community;http\1/edge/community;g' -i /etc/apk/repositories
 
 #
 # Installing Packages
 #
-RUN apt install \
+RUN apk add --no-cache=true --update \
     coreutils \
     bash \
     build-base \
@@ -52,7 +54,6 @@ RUN apt install \
     zlib-dev \
     jpeg \
     zip \
-    php \
     freetype-dev
 
 RUN python3 -m ensurepip \
@@ -66,13 +67,13 @@ RUN python3 -m ensurepip \
 #
 # Clone repo and prepare working directory
 #
-RUN git clone -b master https://github.com/rizpedia/ProjectBish /home/projectbish/
+RUN git clone -b master https://github.com/adekmaulana/ProjectBish /home/projectbish/
 RUN mkdir /home/projectbish/bin/
 WORKDIR /home/projectbish/
+
 #
 # Install requirements
 #
-RUN pip install -r requirements.txt
-#Init system
+RUN pip3 install -r requirements.txt
 RUN rm /bin/sh && ln -s /bin/bash /bin/sh
-CMD ["python","-m","userbot"]
+CMD ["python3","-m","userbot"]
