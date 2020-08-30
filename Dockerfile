@@ -23,6 +23,7 @@ RUN apk add --no-cache=true --update \
     git \
     aria2 \
     util-linux \
+    brotli \
     libevent \
     jpeg-dev \
     libffi-dev \
