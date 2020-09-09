@@ -2,10 +2,16 @@
 #rizpedia
 
 import requests
-from userbot import (COOKIE_CAPING, AUTH_CAPING,
-                     TS_CAPING, INDEX_CAPING)
-from userbot.events import register
+from dotenv import load_dotenv
 
+load_dotenv("config.env")
+
+
+#data
+COOKIE_CAPING = os.environ.get("COOKIE_CAPING", None)
+AUTH_CAPING = os.environ.get("AUTH_CAPING", None)
+INDEX_CAPING = os.environ.get("INDEX_CAPING", None)
+TS_CAPING = os.environ.get("TS_CAPING", None)
 
 #url host
 url = 'https://ai.caping.co.id/v2/event/report'
