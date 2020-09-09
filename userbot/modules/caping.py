@@ -14,7 +14,7 @@ AUTH_CAPING = os.environ.get("AUTH_CAPING", None)
 INDEX_CAPING = os.environ.get("INDEX_CAPING", None)
 TS_CAPING = os.environ.get("TS_CAPING", None)
 
- host
+#host
 url = 'https://ai.caping.co.id/v2/event/report'
 
 
