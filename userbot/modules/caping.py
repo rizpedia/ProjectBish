@@ -1,6 +1,7 @@
 #Ngapain lu bruh? 
 #rizpedia
 
+import os
 import requests
 from dotenv import load_dotenv
 
