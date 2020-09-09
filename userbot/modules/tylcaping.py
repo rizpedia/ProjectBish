@@ -27,9 +27,9 @@ async def pingme(pong):
    headers = { "Accept": "application/json", "Accept-Language": "in", "NETWORKSTATE": "FouthG", "User-Agent": "Mozilla/5.0 (Linux; Android 9; Redmi 6A Build/PQ3B.190801.002; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/83.0.4103.106 Mobile Safari/537.36;CapingNews/5.3.0", "Cookie": (COOKIE_CAPING), "Market": "googleplay", "AppId": "1", "loginType": "1", "Authorization": (AUTH_CAPING), "ts": (TS_CAPING), "index" : (INDEX_CAPING), "Content-Type": "application/json", "Connection": "Keep-Alive" }
    id = 7609201
    json = { "reports": [ { "action": "watch_video", "list": [ { "articleType": 512, "newsId":(id), "status": 1, "times": 2, "totalms": 39 } ] } ] }
-   datajson = "======Nuyul Video======"
+   datajson = "=======Nuyul Video======="
    while sesi < 20 :
-        time.sleep(2)
+        time.sleep(1)
         id = id + 1
         respon = requests.post(url = url, headers = headers, json = json)
         responjson = (respon.json())
