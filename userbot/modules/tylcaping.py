@@ -15,7 +15,7 @@ async def pingme(pong):
     data = '{ "reports": [ { "action": "watch_video", "list": [ { "articleType": 512, "newsId":7609201, "status": 0, "times": 2, "totalms": 5 }, { "articleType": 512, "newsId":7609201, "status": 0, "times": 1, "totalms": 0 }, { "articleType": 512, "newsId":"7609201", "status": 1, "times": 2, "totalms": 39 } ] } ] }'
     respon = requests.post(url = url, headers = headers, data = data)
     responjson = (respon.json())
-    await pong.edit("respon: "(responjson))
+    await pong.edit(str(responjson))
 
 CMD_HELP.update({
      "caping":
