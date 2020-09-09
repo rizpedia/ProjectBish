@@ -2,7 +2,9 @@
 #rizpedia
 
 import requests
-from userbot import COOKIE_CAPING, AUTH_CAPING, INDEX_CAPING, TS_CAPING
+from userbot import (COOKIE_CAPING, AUTH_CAPING,
+                     TS_CAPING, INDEX_CAPING)
+from userbot.events import register
 
 
 #url host
