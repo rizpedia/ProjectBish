@@ -30,7 +30,7 @@ async def pingme(pong):
    datajson = "=======Nuyul Video======="
    while sesi < 20 :
         time.sleep(1)
-        id = id + 1
+        id = id - 1
         respon = requests.post(url = url, headers = headers, json = json)
         responjson = (respon.json())
         sesi = sesi + 1
