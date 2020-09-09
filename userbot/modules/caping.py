@@ -2,7 +2,7 @@
 #rizpedia
 
 import requests
-from userbot import (COOKIE_CAPING, AUTH_CAPING, INDEX_CAPING, TS_CAPING)
+from userbot import COOKIE_CAPING, AUTH_CAPING, INDEX_CAPING, TS_CAPING
 
 
 #url host
