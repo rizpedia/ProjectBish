@@ -41,7 +41,6 @@ async def pingme(pong):
         sesi = sesi + 1
         datajson = datajson + "\n" + (str(responjson)
         await pong.edit(str(datajson))
-
 @register(outgoing=True, pattern="^.capingv$")
 async def pingme(pong):
    await pong.edit("Tuyul video dimulai")
