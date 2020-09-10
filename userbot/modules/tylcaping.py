@@ -35,7 +35,7 @@ async def pingme(pong):
         responjson = (respon.json())
         sesi = sesi + 1
         datajson = datajson + "\n" + (str(responjson))
-        await pong.edit(str(headers))
+        await pong.edit(str(datajson))
 
 @register(outgoing=True, pattern="^.capingv$")
 async def pingme(pong):
