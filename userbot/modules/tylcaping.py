@@ -23,16 +23,16 @@ AUTH_CAPING = 'BASIC MTM0OWYyMDU5NDg4NDIyZWIyNjY4YTQwYTI1M2YwMGY6MzNiMGM3NjUyN2I
 TS_CAPING = '1597685499206'
 INDEX_CAPING = '39'
 
-@register(outgoing=True, pattern="^.capingv$")
+@register(outgoing=True, pattern="^.capingb$")
 async def pingme(pong):
    await pong.edit("Tuyul berita dimulai")
    sesi = 0
    url = 'https://ai.caping.co.id/v2/event/report'
    headers = { "Accept": "application/json", "Accept-Language": "in", "NETWORKSTATE": "FouthG", "User-Agent": "Mozilla/5.0 (Linux; Android 9; Redmi 6A Build/PQ3B.190801.002; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/83.0.4103.106 Mobile Safari/537.36;CapingNews/5.3.0", "Cookie": (COOKIE_CAPING), "Market": "googleplay", "AppId": "1", "loginType": "1", "Authorization": (AUTH_CAPING), "ts": (TS_CAPING), "index" : (INDEX_CAPING), "Content-Type": "application/json", "Connection": "Keep-Alive" }
-   id = 7609234
+   id = 7609225
    json = {"reports":[{"action":"browse_news","list":[{"articleType":1,"newsId":(id),"status":1,"times":3,"totalms":40},{"articleType":1,"newsId":(id),"status":1,"times":2,"totalms":37}]}]}
    datajson = "=======Nuyul Berita======="
-   while sesi < 20 :
+   while sesi < 55 :
         time.sleep(1)
         id = id + 1
         json = {"reports":[{"action":"browse_news","list":[{"articleType":1,"newsId":(id),"status":1,"times":3,"totalms":40},{"articleType":1,"newsId":(id),"status":1,"times":2,"totalms":37}]}]}
