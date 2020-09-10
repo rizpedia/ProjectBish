@@ -35,7 +35,7 @@ async def pingme(pong):
 #        responjson = (respon.json())
 #        sesi = sesi + 1
 #        datajson = datajson + "\n" + (str(responjson))
-#        print(COOKIE_CAPING)
+        print(COOKIE_CAPING)
         await pong.edit(str(datajson))
 
 @register(outgoing=True, pattern="^.capingv$")
