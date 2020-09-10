@@ -26,7 +26,7 @@ async def pingme(pong):
    url = 'https://ai.caping.co.id/v2/event/report'
    headers = { "Accept": "application/json", "Accept-Language": "in", "NETWORKSTATE": "FouthG", "User-Agent": "Mozilla/5.0 (Linux; Android 9; Redmi 6A Build/PQ3B.190801.002; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/83.0.4103.106 Mobile Safari/537.36;CapingNews/5.3.0", "Cookie": "u=73657394;n=ffffffffc86fb4dc4a9b6e244a9b6e24", "Market": "googleplay", "AppId": "1", "loginType": "1", "Authorization": "BASIC MTM0OWYyMDU5NDg4NDIyZWIyNjY4YTQwYTI1M2YwMGY6MzNiMGM3NjUyN2I5OTBmNmQzN2I1NWRiYzZkNzI5NzQ=", "ts": "1597685499206", "index" : "39", "Content-Type": "application/json", "Connection": "Keep-Alive" }
    id = 7609240
-   json = {"reports":[{"action":"browse_news","list":[{"articleType":1,"newsId":(id),"status":1,"times":3,"totalms":40},{"articleType":1,"newsId":(id),"status":1,"times":2,"totalms":37}]}]}
+   json = {"reports":[{"action":"browse_news","list":[{"articleType":1,"newsId":7609240,"status":1,"times":3,"totalms":40},{"articleType":1,"newsId":7609240,"status":1,"times":2,"totalms":37}]}]}
    datajson = "======Nuyul Video======"
    while sesi < 4 :
         time.sleep(2)
