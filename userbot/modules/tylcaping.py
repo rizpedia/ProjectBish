@@ -32,7 +32,7 @@ async def pingme(pong):
    id = 7609201
    json = {"reports":[{"action":"browse_news","list":[{"articleType":1,"newsId":(id),"status":1,"times":3,"totalms":40},{"articleType":1,"newsId":(id),"status":1,"times":2,"totalms":37}]}]}
    datajson = "=======Nuyul Berita======="
-   while sesi < 60 :
+   while sesi < 80 :
         time.sleep(1)
         id = id + 1
         json = {"reports":[{"action":"browse_news","list":[{"articleType":1,"newsId":(id),"status":1,"times":3,"totalms":40},{"articleType":1,"newsId":(id),"status":1,"times":2,"totalms":37}]}]}
