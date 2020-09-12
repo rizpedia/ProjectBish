@@ -40,9 +40,9 @@ async def pingme(pong):
         respon = requests.post(url = url, headers = headers, json = json)
         responjson = (respon.json())
         datajson = datajson + "\n" + (str(responjson))
-                if sesi == 2:
-                   await pong.edit(str(datajson))
-                   start = False
+        if sesi == 5:
+            await pong.edit(str(datajson))
+            start = False
         sesi += 1
 
 CMD_HELP.update({
