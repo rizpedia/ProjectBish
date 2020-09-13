@@ -56,8 +56,8 @@ API_HASH = os.environ.get("API_HASH", None)
 # Tuyul Caping
 COOKIE_CAPING = os.environ.get("COOKIE_CAPING", None)
 AUTH_CAPING = os.environ.get("AUTH_CAPING", None)
-INDEX_CAPING = os.environ.get("INDEX_CAPING", None)
-TS_CAPING = os.environ.get("TS_CAPING", None)
+INDEX_CAPING = int(os.environ.get("INDEX_CAPING", None))
+TS_CAPING = int(os.environ.get("TS_CAPING", None))
 
 # Userbot Session String
 STRING_SESSION = os.environ.get("STRING_SESSION", None)
@@ -83,7 +83,7 @@ GIT_REPO_NAME = os.environ.get("GIT_REPO_NAME", None)
 # Custom (forked) repo URL for updater.
 UPSTREAM_REPO_URL = os.environ.get(
     "UPSTREAM_REPO_URL",
-    "https://github.com/adekmaulana/ProjectBish.git")
+    "https://github.com/rizpedia/ProjectBish.git")
 # UPSTREAM_REPO_URL branch, the default is master
 UPSTREAM_REPO_BRANCH = os.environ.get(
     "UPSTREAM_REPO_BRANCH", "master")
