@@ -75,6 +75,7 @@ async def pingme(pong):
 		
 @register(outgoing=True, pattern="^.capinginfo$")
 async def pingme(pong):
+	url = 'https://ai.caping.co.id/v2/user/login/visitor'
 	req = requests.post(url = url, headers = headers, json = {"city":"Jakarta"})
 	json1 = json.loads(req.text)
 	dump = json.dumps(json1["data"])
