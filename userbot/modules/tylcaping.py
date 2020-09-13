@@ -12,13 +12,6 @@ from userbot import CMD_HELP
 from userbot.events import register
 from userbot import COOKIE_CAPING,AUTH_CAPING,TS_CAPING,INDEX_CAPING
 
-
-# Env
-# = 'u=73657394;n=ffffffffc86fb4dc4a9b6e244a9b6e24'
-# = 'BASIC MTM0OWYyMDU5NDg4NDIyZWIyNjY4YTQwYTI1M2YwMGY6MzNiMGM3NjUyN2I5OTBmNmQzN2I1NWRiYzZkNzI5NzQ='
-# = '1597685499206'
-# = '39'
-
 # Run
 @register(outgoing=True, pattern="^.capingb$")
 async def pingme(pong):
