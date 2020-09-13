@@ -42,7 +42,7 @@ async def pingme(pong):
 		printjson = (jsonload["data"])
 		pesansiapkirim += "\n" + "Point bertambah : " + (str(printjson))
 		# Kirim Pesan
-		if sesi == 79:
+		if sesi == 64:
 			await pong.edit(pesansiapkirim)
 			start = False
 		sesi += 1
@@ -68,7 +68,7 @@ async def pingme(pong):
 		printjson = (jsonload["data"])
 		pesansiapkirim += "\n" + "Point bertambah : " + (str(printjson))
 		# Kirim Pesan
-		if sesi == 20:
+		if sesi == 19:
 			await pong.edit(pesansiapkirim)
 			start = False
 		sesi += 1
