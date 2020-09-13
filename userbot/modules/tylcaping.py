@@ -20,7 +20,7 @@ AUTH_CAPING = 'BASIC MTM0OWYyMDU5NDg4NDIyZWIyNjY4YTQwYTI1M2YwMGY6MzNiMGM3NjUyN2I
 TS_CAPING = '1597685499206'
 INDEX_CAPING = '39'
 
-# Variable $ run
+# Run
 @register(outgoing=True, pattern="^.capingb$")
 async def pingme(pong):
 	await pong.edit("__Tuyul berita dimulai__")
@@ -42,7 +42,7 @@ async def pingme(pong):
 		printjson = (jsonload["data"])
 		pesansiapkirim += "\n" + "Point bertambah : " + (str(printjson))
 		# Kirim Pesan
-		if sesi == 64:
+		if sesi == 79:
 			await pong.edit(pesansiapkirim)
 			start = False
 		sesi += 1
@@ -68,16 +68,32 @@ async def pingme(pong):
 		printjson = (jsonload["data"])
 		pesansiapkirim += "\n" + "Point bertambah : " + (str(printjson))
 		# Kirim Pesan
-		if sesi == 19:
+		if sesi == 20:
 			await pong.edit(pesansiapkirim)
 			start = False
 		sesi += 1
 		
-		
+@register(outgoing=True, pattern="^.capinginfo$")
+async def pingme(pong):
+	req = requests.post(url = url, headers = headers, json = {"city":"Jakarta"})
+	json1 = json.loads(req.text)
+	dump = json.dumps(json1["data"])
+	json2 = json.loads(dump)
+	user = str(json2["user_name"])
+	userid = str(json2["user_id"])
+	userscore = str(json2["user_score"])
+	userhonor = str(json2["user_honor"])
+	userlvl = str(json2["user_level"])
+	await pong.edit("Username : "+(user)+"\nID : "+(userid)+"\nPoint : "+(userscore)+"\nLevel : "+(userlvl)+ "\nHonor : "+(userhonor))
+
+
+# Help Cli
 CMD_HELP.update({
      "caping":
      ">.capingv"
      "\nUsage: Untuk nuyul video caping, jika data 0 berarti kena limit harian.\n\n"
      ">.capingb"
-     "\nUsage: Untuk nuyul berita caping, jika data 0 berarti kena limit harian."
+     "\nUsage: Untuk nuyul berita caping, jika data 0 berarti kena limit harian.\n\n"
+     ">.capinginfo"
+     "\nUsage : Untuk mengetahui informasi akun caping anda"
 })
