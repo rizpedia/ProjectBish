@@ -76,6 +76,7 @@ async def pingme(pong):
 @register(outgoing=True, pattern="^.capinginfo$")
 async def pingme(pong):
 	url = 'https://ai.caping.co.id/v2/user/login/visitor'
+	headers = { "Accept": "application/json", "Accept-Language": "in", "NETWORKSTATE": "FouthG", "User-Agent": "Mozilla/5.0 (Linux; Android 9; Redmi 6A Build/PQ3B.190801.002; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/83.0.4103.106 Mobile Safari/537.36;CapingNews/5.3.0", "Cookie": (COOKIE_CAPING), "Market": "googleplay", "AppId": "1", "loginType": "1", "Authorization": (AUTH_CAPING), "ts": (TS_CAPING), "index" : (INDEX_CAPING), "Content-Type": "application/json", "Connection": "Keep-Alive" }
 	req = requests.post(url = url, headers = headers, json = {"city":"Jakarta"})
 	json1 = json.loads(req.text)
 	dump = json.dumps(json1["data"])
