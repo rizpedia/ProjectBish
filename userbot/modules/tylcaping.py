@@ -6,6 +6,7 @@
 import time
 import requests
 import os
+import json
 from telethon import functions
 from userbot import CMD_HELP
 from userbot.events import register
@@ -28,7 +29,7 @@ async def pingme(pong):
 	id = 7609200
 	start = True
 	sesi = 0
-	pesansiapkirim = "====|Hasil Nuyul Berita|===="
+	pesansiapkirim = "=====|Hasil Nuyul Berita|====="
 	while start:
 		# Post Data
 		time.sleep(1)
