@@ -23,7 +23,7 @@ INDEX_CAPING = '39'
 # Variable $ run
 @register(outgoing=True, pattern="^.capingb$")
 async def pingme(pong):
-	await pong.edit("Tuyul berita dimulai")
+	await pong.edit("__Tuyul berita dimulai__")
 	host = 'https://ai.caping.co.id/v2/event/report'
 	header = { "Accept": "application/json", "Accept-Language": "in", "NETWORKSTATE": "FouthG", "User-Agent": "Mozilla/5.0 (Linux; Android 9; Redmi 6A Build/PQ3B.190801.002; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/83.0.4103.106 Mobile Safari/537.36;CapingNews/5.3.0", "Cookie": (COOKIE_CAPING), "Market": "googleplay", "AppId": "1", "loginType": "1", "Authorization": (AUTH_CAPING), "ts": (TS_CAPING), "index" : (INDEX_CAPING), "Content-Type": "application/json", "Connection": "Keep-Alive" }
 	id = 7609200
@@ -47,6 +47,33 @@ async def pingme(pong):
 			start = False
 		sesi += 1
 
+@register(outgoing=True, pattern="^.capingv$")
+async def pingme(pong):
+	await pong.edit("__Tuyul video dimulai__")
+	host = 'https://ai.caping.co.id/v2/event/report'
+	header = { "Accept": "application/json", "Accept-Language": "in", "NETWORKSTATE": "FouthG", "User-Agent": "Mozilla/5.0 (Linux; Android 9; Redmi 6A Build/PQ3B.190801.002; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/83.0.4103.106 Mobile Safari/537.36;CapingNews/5.3.0", "Cookie": (COOKIE_CAPING), "Market": "googleplay", "AppId": "1", "loginType": "1", "Authorization": (AUTH_CAPING), "ts": (TS_CAPING), "index" : (INDEX_CAPING), "Content-Type": "application/json", "Connection": "Keep-Alive" }
+	id = 5105951
+	start = True
+	sesi = 0
+	pesansiapkirim = "=====|Hasil Nuyul Video|====="
+	while start:
+		# Post Data
+		time.sleep(1)
+		id += 1
+		datapost = { "reports": [ { "action": "watch_video", "list": [ { "articleType": 512, "newsId":(id), "status": 0, "times": 2, "totalms": 5 }, { "articleType": 512, "newsId":(id), "status": 0, "times": 1, "totalms": 0 }, { "articleType": 512, "newsId":(id), "status": 1, "times": 2, "totalms": 39 } ] } ] }
+		post = requests.post(url = host, headers = header, json = datapost)
+		respon = (post.text)
+		# Json to str
+		jsonload = json.loads(str(respon))	
+		printjson = (jsonload["data"])
+		pesansiapkirim += "\n" + "Point bertambah : " + (str(printjson))
+		# Kirim Pesan
+		if sesi == 20:
+			await pong.edit(pesansiapkirim)
+			start = False
+		sesi += 1
+		
+		
 CMD_HELP.update({
      "caping":
      ">.capingv"
