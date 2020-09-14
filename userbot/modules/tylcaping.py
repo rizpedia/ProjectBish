@@ -15,7 +15,7 @@ from userbot import COOKIE_CAPING,AUTH_CAPING,TS_CAPING,INDEX_CAPING
 # Run
 @register(outgoing=True, pattern="^.capingb$")
 async def pingme(pong):
-	if (COOKIE_CAPING) == Kosong:
+	if (COOKIE_CAPING) == "Kosong":
 		await pong.edit("Silahkan Edit Var Untuk Akun Caping Anda")
 	else:
 		await pong.edit("__Tuyul berita dimulai__")
@@ -44,7 +44,7 @@ async def pingme(pong):
 
 @register(outgoing=True, pattern="^.capingv$")
 async def pingme(pong):
-	if (COOKIE_CAPING) == Kosong:
+	if (COOKIE_CAPING) == "Kosong":
 		await pong.edit("Silahkan Edit Var Untuk Akun Caping Anda")
 	else:
 		await pong.edit("__Tuyul video dimulai__")
@@ -73,7 +73,7 @@ async def pingme(pong):
 		
 @register(outgoing=True, pattern="^.capinginfo$")
 async def pingme(pong):
-	if (COOKIE_CAPING) == Kosong:
+	if (COOKIE_CAPING) == "Kosong":
 		await pong.edit("Silahkan Edit Var Untuk Akun Caping Anda")
 	else:
 		url = 'https://ai.caping.co.id/v2/user/login/visitor'
