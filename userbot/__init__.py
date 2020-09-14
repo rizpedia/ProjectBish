@@ -54,10 +54,10 @@ API_KEY = os.environ.get("API_KEY", None)
 API_HASH = os.environ.get("API_HASH", None)
 
 # Tuyul Caping
-COOKIE_CAPING = os.environ.get("COOKIE_CAPING", "None")
-AUTH_CAPING = os.environ.get("AUTH_CAPING", "None")
-INDEX_CAPING = str(os.environ.get("INDEX_CAPING", "None"))
-TS_CAPING = str(os.environ.get("TS_CAPING", "None"))
+COOKIE_CAPING = os.environ.get("COOKIE_CAPING", "Kosong")
+AUTH_CAPING = os.environ.get("AUTH_CAPING", "Kosong")
+INDEX_CAPING = str(os.environ.get("INDEX_CAPING", "Kosong"))
+TS_CAPING = str(os.environ.get("TS_CAPING", "Kosong"))
 
 # Userbot Session String
 STRING_SESSION = os.environ.get("STRING_SESSION", None)
