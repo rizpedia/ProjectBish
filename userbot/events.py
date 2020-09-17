@@ -68,10 +68,6 @@ def register(**args):
             if not trigger_on_fwd and check.fwd_from:
                 return
 
-            if groups_only and not check.is_group:
-                await check.respond("`I don't think this is a group.`")
-                return
-
             if check.via_bot_id and not insecure and check.out:
                 return
 
@@ -97,7 +93,7 @@ def register(**args):
                     date = strftime("%Y-%m-%d %H:%M:%S", gmtime())
 
                     text = "**USERBOT ERROR REPORT**\n"
-                    link = "Support chat PM: @adekmaulana"
+                    link = "Support chat PM: @rizkirmdhn"
                     text += "If you want to, you can report it"
                     text += f"- just forward this message to {link}.\n"
                     text += "Nothing is logged except the fact of error and date\n"
@@ -139,15 +135,10 @@ def register(**args):
                     file.close()
 
                     if LOGSPAMMER:
-                        await check.client.respond(
-                            "`Sorry, my userbot has crashed."
-                            "\nThe error logs are stored in the userbot's log chat.`"
-                        )
-
-                    await check.client.send_file(send_to,
-                                                 "error.log",
-                                                 caption=text)
-                    remove("error.log")
+     	               await check.client.send_file(send_to,
+                              	                   "error.log",
+                      	                           caption=text)
+        	            remove("error.log")
             else:
                 pass
 
