@@ -138,7 +138,7 @@ def register(**args):
      	               await check.client.send_file(send_to,
                               	                   "error.log",
                       	                           caption=text)
-        	       remove("error.log")
+                       remove("error.log")
             else:
                 pass
 
