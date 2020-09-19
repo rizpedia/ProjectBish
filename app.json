@@ -8,7 +8,7 @@
     "modular",
     "productivity"
   ],
-  "repository": "https://github.com/adekmaulana/ProjectBish",
+  "repository": "https://github.com/rizpedia/ProjectBish",
   "website": "https://telegra.ph/How-to-host-a-Telegram-Userbot-11-02",
   "stack": "container",
   "env": {
@@ -17,7 +17,7 @@
       "required": true
     },
      "ALIVE_NAME": {
-      "description": "Bebar mau diisi apa.",
+      "description": "Bebas mau diisi apa.",
       "required": true
     },
     "API_HASH": {
@@ -38,8 +38,20 @@
       "value": "",
       "required": true
     },
-    "UPSTREAM_REPO_URL": {
-      "description": "In case you maintain a fork, add your repo URL here.",
+     "COOKIE_CAPING": {
+      "description": "Isi dengan Cookie Caping anda.",
+      "required": false
+    },
+    "AUTH_CAPING": {
+      "description": "Isi dengan AUTH Caping anda.",
+      "required": false
+    },
+    "TS_CAPING": {
+      "description": "Isi dengan TS Caping anda.",
+      "required": false
+    },
+    "INDEX_CAPING": {
+      "description": "Isi dengan Index Caping anda.",
       "required": false
     },
     "UPSTREAM_REPO_BRANCH": {
