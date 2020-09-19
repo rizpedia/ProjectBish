@@ -73,11 +73,11 @@ async def mention_afk(mention):
                     wday = now + datetime.timedelta(days=-day)
                     afk_str = wday.strftime('%A')
             elif hours > 1:
-                afk_str = f"`{int(hours)}Jam{int(minutes)}Menit` Lalu"
+                afk_str = f"`{int(hours)} Jam, {int(minutes)}menit` Lalu"
             elif minutes > 0:
-                afk_str = f"`{int(minutes)}Menit{int(seconds)}Detik` Lalu"
+                afk_str = f"`{int(minutes)} Menit, {int(seconds)}detik` Lalu"
             else:
-                afk_str = f"`{int(seconds)}Detik` Lalu"
+                afk_str = f"`{int(seconds)} Detik` Lalu"
             if mention.sender_id not in USERS:
                 if AFKREASON:
                     await mention.reply("[Offline]"
@@ -146,11 +146,11 @@ async def afk_on_pm(sender):
                     wday = now + datetime.timedelta(days=-day)
                     afk_str = wday.strftime('%A')
             elif hours > 1:
-                afk_str = f"`{int(hours)}Jam{int(minutes)} Menit` Lalu"
+                afk_str = f"`{int(hours)} Jam, {int(minutes)} Menit` Lalu"
             elif minutes > 0:
-                afk_str = f"`{int(minutes)}Menit{int(seconds)}Detik` Lalu"
+                afk_str = f"`{int(minutes)} Menit, {int(seconds)}Detik` Lalu"
             else:
-                afk_str = f"`{int(seconds)}Detik` Lalu"
+                afk_str = f"`{int(seconds)} Detik` Lalu"
             if sender.sender_id not in USERS:
                 if AFKREASON:
                     await sender.reply("[Offline]"
@@ -241,7 +241,6 @@ async def type_afk_is_not_true(notafk):
 CMD_HELP.update({
     "afk":
     ".afk [Optional Reason]\
-\nUsage: Mengatur status Menjadi AFK.\nMenjawab Ke Orang Yang Merepli Kamu Atau PM \
-Memberi Tahu Bahwa Kamu AFK dengan(alasan).\n\n Otomatis MeMatikan AFK saat Anda mengetik kembali apa pun, di mana saja , Eh benerkan Gini? ðŸ˜‚.\
+\nUsage: Anda tau AFK kan, Ga perlu dijelasin‚.\
 "
 })
