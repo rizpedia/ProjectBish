@@ -17,7 +17,7 @@ async def help(event):
         if args in CMD_HELP:
             await event.edit(str(CMD_HELP[args]))
         else:
-            await event.edit("Harap tentukan nama module yang benar!.")
+            await event.edit("Harap tentukan nama module yang benar!")
     else:
         string = "-  "
         for i in CMD_HELP:
