@@ -972,31 +972,31 @@ async def _(event):
 CMD_HELP.update({
     "admin":
     ".promote <username/reply> <custom rank (optional)>\
-\nUsage: Provides admin rights to the person in the chat.\
+\nPenggunaan: Memberikan hak admin kepada orang dalam obrolan.\
 \n\n.demote <username/reply>\
-\nUsage: Revokes the person's admin permissions in the chat.\
+\nPenggunaan: Mencabut izin admin orang tersebut dalam obrolan.\
 \n\n.ban <username/reply> <reason (optional)>\
-\nUsage: Bans the person off your chat.\
+\nPenggunaan: Keluarkan orang tersebut dari obrolan Anda.\
 \n\n.unban <username/reply>\
-\nUsage: Removes the ban from the person in the chat.\
+\nPenggunaan: Menghapus larangan dari orang di obrolan.\
 \n\n.mute <username/reply> <reason (optional)>\
-\nUsage: Mutes the person in the chat, works on admins too.\
+\nPenggunaan: Membungkam orang dalam obrolan, juga berfungsi pada admin.\
 \n\n.unmute <username/reply>\
-\nUsage: Removes the person from the muted list.\
+\npenggunaan: Menghapus orang dari daftar yang dibungkam.\
 \n\n.gmute <username/reply> <reason (optional)>\
-\nUsage: Mutes the person in all groups you have in common with them.\
+\nPenggunaan: Membungkam orang di semua grup yang memiliki kesamaan dengan Anda dengannya.\
 \n\n.ungmute <username/reply>\
-\nUsage: Reply someone's message with .ungmute to remove them from the gmuted list.\
+\nPengguaan: Balas pesan seseorang dengan .ungmute untuk menghapusnya dari daftar yang dibungkam.\
 \n\n.zombies\
-\nUsage: Searches for deleted accounts in a group. Use .zombies clean to remove deleted accounts from the group.\
+\nPenggunaan: Mencari akun yang dihapus dalam grup. Gunakan .zombies clean untuk menghapus akun yang dihapus dari grup.\
 \n\n.all\
-\nUsage: Tag all member in the group chat.\
+\nPenggunaan: Tandai semua anggota di obrolan grup.\
 \n\n.admins\
-\nUsage: Retrieves a list of admins in the chat.\
+\nPenggunaan: Mengambil daftar admin di obrolan.\
 \n\n.bots\
-\nUsage: Retrieves a list of bots in the chat.\
+\nPenggunaan: Mengambil daftar bot di obrolan.\
 \n\n.users or .users <name of member>\
-\nUsage: Retrieves all (or queried) users in the chat.\
+\nPenggunaan: Mengambil kembali semua (atau menanyakan) pengguna di obrolan.\
 \n\n.setgppic <reply to image>\
-\nUsage: Changes the group's display picture."
+\nPenggunaan: Mengubah gambar tampilan grup."
 })
