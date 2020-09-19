@@ -241,6 +241,6 @@ async def type_afk_is_not_true(notafk):
 CMD_HELP.update({
     "afk":
     ".afk [Optional Reason]\
-\nUsage: Anda tau AFK kan, Ga perlu dijelasin‚.\
+\nPenggunaan: Anda tau AFK kan, Ga perlu dijelasin‚.\
 "
 })
