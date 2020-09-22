@@ -27,7 +27,7 @@ async def useridgetter(target):
                 name = "@" + message.forward.sender.username
             else:
                 name = "*" + message.forward.sender.first_name + "*"
-        await target.edit("**Name:** {} \n**User ID:** `{}`".format(
+        await target.edit("**Nama:** {} \n**ID Pengguna:** `{}`".format(
             name, user_id))
 
 
@@ -64,9 +64,9 @@ async def log(log_text):
             await bot.send_message(BOTLOG_CHATID, textx)
         else:
             return await log_text.edit("`What am I supposed to log?`")
-        await log_text.edit("`Logged Successfully`")
+        await log_text.edit("`Berhasil Dicatat`")
     else:
-        await log_text.edit("`This feature requires Logging to be enabled!`")
+        await log_text.edit("`Fitur ini membutuhkan Logging untuk diaktifkan!`")
     await sleep(2)
     await log_text.delete()
 
@@ -74,7 +74,7 @@ async def log(log_text):
 @register(outgoing=True, pattern="^.kickme$")
 async def kickme(leave):
     """ Basically it's .kickme command """
-    await leave.edit("Nope, no, no, I go away")
+    await leave.edit("Tidak, tidak, tidak, aku pergi")
     await leave.client.kick_participant(leave.chat_id, 'me')
 
 
@@ -84,9 +84,9 @@ async def unmute_chat(unm_e):
     try:
         from userbot.modules.sql_helper.keep_read_sql import unkread
     except AttributeError:
-        return await unm_e.edit('`Running on Non-SQL Mode!`')
+        return await unm_e.edit('`Berjalan di Mode Non-SQL!`')
     unkread(str(unm_e.chat_id))
-    await unm_e.edit("```Unmuted this chat Successfully```")
+    await unm_e.edit("```Berhasil menyuarakan obrolan ini```")
     await sleep(2)
     await unm_e.delete()
 
@@ -97,16 +97,16 @@ async def mute_chat(mute_e):
     try:
         from userbot.modules.sql_helper.keep_read_sql import kread
     except AttributeError:
-        return await mute_e.edit("`Running on Non-SQL mode!`")
+        return await mute_e.edit("`Berjalan pada mode Non-SQL!`")
     await mute_e.edit(str(mute_e.chat_id))
     kread(str(mute_e.chat_id))
-    await mute_e.edit("`Shush! This chat will be silenced!`")
+    await mute_e.edit("`Mendiamkan! Obrolan ini akan dibungkam!`")
     await sleep(2)
     await mute_e.delete()
     if BOTLOG:
         await mute_e.client.send_message(
             BOTLOG_CHATID,
-            str(mute_e.chat_id) + " was silenced.")
+            str(mute_e.chat_id) + " dibungkam.")
 
 
 @register(incoming=True, disable_errors=True)
@@ -141,12 +141,12 @@ async def sedNinjaToggle(event):
     global regexNinja
     if event.pattern_match.group(1) == "on":
         regexNinja = True
-        await event.edit("`Successfully enabled ninja mode for Regexbot.`")
+        await event.edit("`Berhasil mengaktifkan mode ninja untuk Regexbot.`")
         await sleep(1)
         await event.delete()
     elif event.pattern_match.group(1) == "off":
         regexNinja = False
-        await event.edit("`Successfully disabled ninja mode for Regexbot.`")
+        await event.edit("`Berhasil menonaktifkan mode ninja untuk Regexbot.`")
         await sleep(1)
         await event.delete()
 
@@ -154,21 +154,21 @@ async def sedNinjaToggle(event):
 CMD_HELP.update({
     "chat":
     ">`.chatid`"
-    "\nUsage: Fetches the current chat's ID"
+    "\nPenggunaan: Mengambil ID obrolan saat ini"
     "\n\n>`.userid`"
-    "\nUsage: Fetches the ID of the user in reply, if its a forwarded message, finds the ID for the source."
+    "\nPenggunaan: Mengambil ID pengguna sebagai balasan, jika ini adalah pesan yang diteruskan, menemukan ID untuk sumbernya."
     "\n\n>`.log`"
-    "\nUsage: Forwards the message you've replied to in your bot logs group."
+    "\nPenggunaan: Meneruskan pesan yang telah Anda balas di grup log bot Anda."
     "\n\n>`.kickme`"
-    "\nUsage: Leave from a targeted group."
+    "\nPenggunaan: Keluar dari grup target."
     "\n\n>`.unmutechat`"
-    "\nUsage: Unmutes a muted chat."
+    "\nPenggunaan: Membungkam obrolan yang dibungkam."
     "\n\n>`.mutechat`"
-    "\nUsage: Allows you to mute any chat."
+    "\nPenggunaan: Memungkinkan Anda membungkam obrolan apa pun."
     "\n\n>`.link <username/userid> : <optional text>` (or) reply to someone's message with"
     "\n\n>`.link <optional text>`"
-    "\nUsage: Generate a permanent link to the user's profile with optional custom text."
+    "\nPenggunaan: Buat tautan permanen ke profil pengguna dengan teks kustom opsional."
     "\n\n>`.regexninja on/off`"
-    "\nUsage: Globally enable/disables the regex ninja module."
-    "\nRegex Ninja module helps to delete the regex bot's triggering messages."
+    "\nPenggunaan: Mengaktifkan / menonaktifkan modul ninja regex secara global."
+    "\nModul Regex Ninja membantu menghapus pesan pemicu bot regex."
 })
