@@ -11,18 +11,9 @@ from telethon.tl.types import User
 from sqlalchemy.exc import IntegrityError
 
 from userbot import (COUNT_PM, CMD_HELP, BOTLOG, BOTLOG_CHATID, PM_AUTO_BAN,
-                     LASTMSG, LOGS)
+                     LASTMSG, LOGS, UNAPPROVED_MSG)
 
 from userbot.events import register
-
-# ========================= CONSTANTS ============================
-UNAPPROVED_MSG = (
-    "`Hai, Ini pesan otomatis dari bot.\n`"
-    "`Mohon tunggu majikanku membalas.\n`"
-    "`Tolong untuk jangan spam ok! SPAM = BLOCK!`")
-# =================================================================
-
-
 @register(incoming=True, disable_edited=True, disable_errors=True)
 async def permitpm(event):
     """ Prohibits people from PMing you without approval. \
