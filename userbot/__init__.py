@@ -53,6 +53,9 @@ if CONFIG_CHECK:
 API_KEY = os.environ.get("API_KEY", None)
 API_HASH = os.environ.get("API_HASH", None)
 
+#Pesan Belum Approve
+UNAPPROVED_MSG = os.environ.get("UNAPPROVED_MSG", "HeY! This is an automated message.\n\nI haven't approved you to PM yet.Please wait for me to look in, I mostly approve PMs.\n\nUntil then, please don't spam my Mastor's PM, you'll get blocked and reported if you do so!")
+
 # Tuyul Caping
 COOKIE_CAPING = os.environ.get("COOKIE_CAPING", "Kosong")
 AUTH_CAPING = os.environ.get("AUTH_CAPING", "Kosong")
