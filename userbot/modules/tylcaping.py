@@ -14,11 +14,11 @@ from userbot import COOKIE_CAPING,AUTH_CAPING,TS_CAPING,INDEX_CAPING
 
 # Run
 @register(outgoing=True, pattern="^.capingb$")
-async def pingme(pong):
+async def pingme(cpngb):
 	if (COOKIE_CAPING) == "Kosong":
-		await pong.edit("Silahkan Edit Var Untuk Akun Caping Anda")
+		await cpngb.edit("Silahkan Edit Var Untuk Akun Caping Anda")
 	else:
-		await pong.edit("__Tuyul berita dimulai__")
+		await cpngb.edit("__Tuyul berita dimulai__")
 		host = 'https://ai.caping.co.id/v2/event/report'
 		header = { "Accept": "application/json", "Accept-Language": "in", "NETWORKSTATE": "FouthG", "User-Agent": "Mozilla/5.0 (Linux; Android 9; Redmi 6A Build/PQ3B.190801.002; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/83.0.4103.106 Mobile Safari/537.36;CapingNews/5.3.0", "Cookie": (COOKIE_CAPING), "Market": "googleplay", "AppId": "1", "loginType": "1", "Authorization": (AUTH_CAPING), "ts": (TS_CAPING), "index" : (INDEX_CAPING), "Content-Type": "application/json", "Connection": "Keep-Alive" }
 		id = 7609200
@@ -38,16 +38,16 @@ async def pingme(pong):
 			pesansiapkirim += "\n" + "Point bertambah : " + (str(printjson))
 			# Kirim Pesan
 			if sesi == 64:
-				await pong.edit(pesansiapkirim)
+				await cpngb.edit(pesansiapkirim)
 				start = False
 			sesi += 1
 
 @register(outgoing=True, pattern="^.capingv$")
-async def pingme(pong):
+async def pingme(cpngv):
 	if (COOKIE_CAPING) == "Kosong":
-		await pong.edit("Silahkan Edit Var Untuk Akun Caping Anda")
+		await cpngv.edit("Silahkan Edit Var Untuk Akun Caping Anda")
 	else:
-		await pong.edit("__Tuyul video dimulai__")
+		await cpngv.edit("__Tuyul video dimulai__")
 		host = 'https://ai.caping.co.id/v2/event/report'
 		header = { "Accept": "application/json", "Accept-Language": "in", "NETWORKSTATE": "FouthG", "User-Agent": "Mozilla/5.0 (Linux; Android 9; Redmi 6A Build/PQ3B.190801.002; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/83.0.4103.106 Mobile Safari/537.36;CapingNews/5.3.0", "Cookie": (COOKIE_CAPING), "Market": "googleplay", "AppId": "1", "loginType": "1", "Authorization": (AUTH_CAPING), "ts": (TS_CAPING), "index" : (INDEX_CAPING), "Content-Type": "application/json", "Connection": "Keep-Alive" }
 		id = 5105951
@@ -67,14 +67,14 @@ async def pingme(pong):
 			pesansiapkirim += "\n" + "Point bertambah : " + (str(printjson))
 			# Kirim Pesan
 			if sesi == 19:
-				await pong.edit(pesansiapkirim)
+				await cpngv.edit(pesansiapkirim)
 				start = False
 			sesi += 1
 		
 @register(outgoing=True, pattern="^.capinginfo$")
-async def pingme(pong):
+async def pingme(cpnginfo):
 	if (COOKIE_CAPING) == "Kosong":
-		await pong.edit("Silahkan Edit Var Untuk Akun Caping Anda")
+		await cpnginfo.edit("Silahkan Edit Var Untuk Akun Caping Anda")
 	else:
 		url = 'https://ai.caping.co.id/v2/user/login/visitor'
 		headers = { "Accept": "application/json", "Accept-Language": "in", "NETWORKSTATE": "FouthG", "User-Agent": "Mozilla/5.0 (Linux; Android 9; Redmi 6A Build/PQ3B.190801.002; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/83.0.4103.106 Mobile Safari/537.36;CapingNews/5.3.0", "Cookie": (COOKIE_CAPING), "Market": "googleplay", "AppId": "1", "loginType": "1", "Authorization": (AUTH_CAPING), "ts": (TS_CAPING), "index" : (INDEX_CAPING), "Content-Type": "application/json", "Connection": "Keep-Alive" }
@@ -87,16 +87,16 @@ async def pingme(pong):
 		userscore = str(json2["user_score"])
 		userhonor = str(json2["user_honor"])
 		userlvl = str(json2["user_level"])
-		await pong.edit("Username : "+(user)+"\nID : "+(userid)+"\nPoint : "+(userscore)+"\nLevel : "+(userlvl)+ "\nHonor : "+(userhonor))
+		await cpnginfo.edit("Username : "+(user)+"\nID : "+(userid)+"\nPoint : "+(userscore)+"\nLevel : "+(userlvl)+ "\nHonor : "+(userhonor))
 
 
 # Help Cli
 CMD_HELP.update({
      "caping":
      ">.capingv"
-     "\nUsage: Untuk nuyul video caping, jika data 0 berarti kena limit harian.\n\n"
+     "\nPenggunaan: Untuk nuyul video caping, jika data 0 berarti kena limit harian.\n\n"
      ">.capingb"
-     "\nUsage: Untuk nuyul berita caping, jika data 0 berarti kena limit harian.\n\n"
+     "\nPenggunan: Untuk nuyul berita caping, jika data 0 berarti kena limit harian.\n\n"
      ">.capinginfo"
-     "\nUsage : Untuk mengetahui informasi akun caping anda"
+     "\nPenggunan: Untuk mengetahui informasi akun caping anda"
 })
