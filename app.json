@@ -89,6 +89,9 @@
       "description": "ChatID of the Log group. Set it to '0' if BOTLOG = False and/or if LOGSPAMMER = False.",
       "value": "0"
     },
+    "UNAPPROVED_MSG": {
+      "description": "Pesaan saat blm approve"
+    },
     "CONSOLE_LOGGER_VERBOSE": {
       "description": "If you need verbosity on the console logging",
       "value": "False"
