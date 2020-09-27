@@ -140,7 +140,7 @@ async def amireallyalive(alive):
            f"------------------------------------\n"
            "`")
            
-	if ALIVE_LOGO:
+    if ALIVE_LOGO:
         try:
             logo = ALIVE_LOGO
             await bot.send_file(alive.chat_id, logo, caption=output)
