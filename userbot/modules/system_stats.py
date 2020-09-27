@@ -12,7 +12,7 @@ from shutil import which
 from os import remove
 from telethon import version
 
-from userbot import CMD_HELP, ALIVE_NAME
+from userbot import CMD_HELP, ALIVE_NAME, ALIVE_LOGO
 from userbot.events import register
 
 # ================= CONSTANT =================
@@ -131,15 +131,27 @@ async def pipcheck(pip):
 @register(outgoing=True, pattern="^.alive$")
 async def amireallyalive(alive):
     """ For .on command, check if the bot is running.  """
-    await alive.edit("`"
-                     "I'm alive, at your services....\n"
-                     f"------------------------------------\n"
-                     f"•  User             : {DEFAULTUSER}\n"
-                     f"•  Python           : {python_version()}\n"
-                     f"•  Telethon version : {version.__version__}\n"
-                     f"------------------------------------\n"
-                     "`")
-
+    output = ("`"
+          "I'm alive, at your services....\n"
+           f"------------------------------------\n"
+           f"•  User             : {DEFAULTUSER}\n"
+           f"•  Python           : {python_version()}\n"
+           f"•  Telethon version : {version.__version__}\n"
+           f"------------------------------------\n"
+           "`")
+           
+	if ALIVE_LOGO:
+        try:
+            logo = ALIVE_LOGO
+            await bot.send_file(alive.chat_id, logo, caption=output)
+            await alive.delete()
+        except BaseException:
+            await alive.edit(
+                output + "\n\n *`The provided logo is invalid."
+                "\nMake sure the link is directed to the logo picture`"
+            )
+     else:
+        await alive.edit(output)  
 
 @register(outgoing=True, pattern="^.aliveu")
 async def amireallyaliveuser(username):
